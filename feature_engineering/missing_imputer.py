@@ -1,3 +1,7 @@
+"""
+Script para transformar os dados faltantes e preenchê-los com a mediana
+"""
+
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 import pandas as pd

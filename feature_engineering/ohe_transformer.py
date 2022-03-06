@@ -1,3 +1,7 @@
+"""
+Script para transformar os dados categóricos utilizando a técnica de one-hot encoding.
+"""
+
 from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder

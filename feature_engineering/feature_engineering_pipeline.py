@@ -1,13 +1,13 @@
-import logging
+"""
+Script que contém o pipeline da feature engineering. Ele chama scripts secundários que fazem as transformações necessárias
+dos dados e na ordem em que constam no pipeline
+"""
 
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
-
 from feature_engineering.missing_imputer import MissingValuesImputer
 from feature_engineering.numerical_scaler import NumericalFeaturesScaler
 from feature_engineering.ohe_transformer import OneHotEncode
-
-logger = logging.getLogger(__name__)
 
 
 class FeatureEngineering(BaseEstimator, TransformerMixin):
@@ -16,7 +16,6 @@ class FeatureEngineering(BaseEstimator, TransformerMixin):
         self.numerical_features = numerical_features
 
     def get_pipeline(self):
-        logger.info('Fazendo a feature engineering...')
         return Pipeline(
             [
                 ("ohe", OneHotEncode()),

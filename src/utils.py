@@ -1,4 +1,9 @@
+"""
+Script auxiliar contendo funções para salvar e carregar os arquivos pickle
+"""
+
 import pickle
+
 
 def load_pickle(pickle_path, default=None):
     try:

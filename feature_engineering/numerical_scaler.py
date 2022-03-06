@@ -1,3 +1,7 @@
+"""
+Script para transformar os dados numéricos com base no MinMaxScaler
+"""
+
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import MinMaxScaler
 
