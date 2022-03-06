@@ -1,7 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.preprocessing import MinMaxScaler
 
-from predictor.utils import load_pickle, save_pickle
+from src.utils import load_pickle, save_pickle
 
 
 class NumericalFeaturesScaler(BaseEstimator, TransformerMixin):

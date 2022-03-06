@@ -2,7 +2,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
 
-from predictor.utils import load_pickle, save_pickle
+from src.utils import load_pickle, save_pickle
 
 
 class OneHotEncode(BaseEstimator, TransformerMixin):
@@ -17,7 +17,7 @@ class OneHotEncode(BaseEstimator, TransformerMixin):
 
         enc.fit(df['Sex'].values.reshape(-1, 1))
 
-        save_pickle(self.enc, self.pickle_path)
+        save_pickle(enc, self.pickle_path)
 
         return self
 

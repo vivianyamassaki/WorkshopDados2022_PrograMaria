@@ -2,7 +2,7 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.impute import SimpleImputer
 import pandas as pd
 
-from predictor.utils import load_pickle, save_pickle
+from src.utils import load_pickle, save_pickle
 
 
 class MissingValuesImputer(BaseEstimator, TransformerMixin):
