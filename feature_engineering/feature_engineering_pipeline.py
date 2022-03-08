@@ -14,12 +14,13 @@ class FeatureEngineering(BaseEstimator, TransformerMixin):
 
     def __init__(self, numerical_features):
         self.numerical_features = numerical_features
-
-    def get_pipeline(self):
-        return Pipeline(
+        self.pipeline = Pipeline(
             [
                 ("ohe", OneHotEncode()),
                 ("missing_imputer", MissingValuesImputer()),
                 ("numerical_scaler", NumericalFeaturesScaler(numerical_features=self.numerical_features)),
             ]
         )
+
+    def transform(self, data):
+        return self.pipeline.transform(data)
