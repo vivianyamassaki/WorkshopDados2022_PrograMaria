@@ -25,6 +25,7 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 from feature_engineering.feature_engineering_pipeline import FeatureEngineering
 from sklearn.metrics import accuracy_score
+from src.utils import save_pickle
 
 
 def transform_feature_engineering(X_train, X_test):
@@ -88,8 +89,7 @@ def main():
     df.to_csv('data/test_predictions.csv')
 
     # salva o modelo treinado
-    with open('models/model.pkl', 'wb') as pickle_file:
-        pickle.dump(model, pickle_file)
+    save_pickle(model, 'models/model.pkl')
 
 
 if __name__ == '__main__':
