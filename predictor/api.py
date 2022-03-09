@@ -22,6 +22,7 @@ app = FastAPI()
 #     """
 #     return JSONResponse({"resposta":"Oi mundo!"})
 
+
 class Passenger(BaseModel):
     PassengerId: int
     Pclass: int
@@ -45,7 +46,7 @@ def predict(passenger: Passenger):
     id = passenger.PassengerId
     del data['PassengerId']
     status, result = predictor.predict(data)
-    return JSONResponse({"id":int(id), "score":float(result), "predicao":status})
+    return JSONResponse({"id": int(id), "score": f'{result*100:.2f}%', "predicao": status})
 
 
 if __name__ == "__main__":
