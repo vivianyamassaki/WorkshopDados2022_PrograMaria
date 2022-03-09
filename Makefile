@@ -1,7 +1,7 @@
 IMAGE = programaria/workshop-mlops
 
 run:
-	python predictor/app.py
+	python predictor/api.py
 
 build:
 	sudo docker image build -t ${IMAGE} .
