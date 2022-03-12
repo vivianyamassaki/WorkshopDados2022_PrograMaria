@@ -1,3 +1,7 @@
+"""
+Script que contém o pipeline da feature engineering. Ele chama scripts secundários que fazem as transformações necessárias
+dos dados e na ordem em que constam no pipeline
+"""
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.pipeline import Pipeline
 
